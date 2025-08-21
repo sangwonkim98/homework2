@@ -1,0 +1,45 @@
+# 데이터셋
+task: EN2FR
+
+data_files:
+  EN2DE:
+    train_file:
+      src: data/multi30k/train/train.de
+      tgt: data/multi30k/train/train.en
+    dev_file:
+      src: data/multi30k/val/val.de
+      tgt: data/multi30k/val/val.en
+    test_file:
+      src: data/multi30k/test/test.de
+      tgt: data/multi30k/test/test.en
+
+  EN2FR:
+    train_file: data/enfr_splits/train.en-fr.tsv
+    dev_file: data/enfr_splits/dev.en-fr.tsv
+    test_file: data/enfr_splits/test.en-fr.tsv
+        
+# 디멘션
+model: RNN
+model_params_rnn:
+  hidden_size: 1000
+  teacher_forcing_ratio: 0.5
+
+batch_size: 128
+
+# 초기화
+random_seed: 54321
+embedding_file: /Users/test/Downloads/연습/Deeplarning-basic-code-from-scratch/h2_root/Homework2/word2vec_news1.model
+embedding_dim: 300
+vocab_size: 30000
+use_unk_for_oov: true
+
+optimizer: adam
+
+optimizer_params:
+  adam:
+    lr: 1.0e-3
+    #betas: [0.7, 0.999]
+    #weight_decay: 1.0e-7
+
+# 트레이닝 프로세스
+max_epochs: 50
