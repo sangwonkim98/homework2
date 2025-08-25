@@ -28,7 +28,7 @@ batch_size: 128
 
 # 초기화
 random_seed: 54321
-embedding_file: /Users/test/Downloads/연습/Deeplarning-basic-code-from-scratch/h2_root/Homework2/word2vec_news1.model
+embedding_file: artifact/embeddings/word2vec_news.model   # ← 공백 추가
 embedding_dim: 300
 vocab_size: 30000
 use_unk_for_oov: true
